@@ -1,0 +1,13 @@
+.body{
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title{
+    color: red;
+}
+
+.p{
+    color: white;
+    font-style: italic;
+}

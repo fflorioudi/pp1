@@ -1,0 +1,14 @@
+.p{
+    color: green;
+    background-color: yellow;
+}
+
+.title{
+    color: blue;
+    text-decoration: underline;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}

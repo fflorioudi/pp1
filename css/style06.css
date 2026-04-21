@@ -1,0 +1,19 @@
+.caja1 , .caja2{
+    width: 300px;
+}
+.box{
+    display: block;
+}
+.caja1{
+    padding: 10px;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+.box2{
+    display: flex;
+    justify-content: start;
+}
+.caja2{
+    border: 1px dotted black;
+    margin-right: 5px;
+}
