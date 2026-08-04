@@ -58,7 +58,7 @@ for ($i = 1; $i <= 100; $i++){
 
         echo "venta " . $i . ": Sala " . $nroSala . " - " . $cantidadButacas . " butaca/s vendida/s <br>"; 
     } catch (Exception $e){
-        echo "Venta " . $i . ": " . $e->getMessage() . "<br>";
+        echo "Venta1  " . $i . ": " . $e->getMessage() . "<br>";
     }
 }
 
