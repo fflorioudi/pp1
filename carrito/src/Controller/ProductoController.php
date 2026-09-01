@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ProductoController extends AbstractController
 {
-    #[Route('/productos', name: 'listar_productos')]
+    #[Route('/', name: 'listar_productos')]
     public function listarProducto(ProductoRepository $productoRepository): Response
     {
         // b. Invocar al método findAll de la clase ProductoRepository
