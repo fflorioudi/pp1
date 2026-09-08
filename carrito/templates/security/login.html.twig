@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<style>
+    .login-container {
+        width: 255px;
+        margin: 75px auto;
+        border: 1px solid #777;
+        padding: 22px 28px;
+        box-sizing: border-box;
+    }
+
+    .login-container h2 {
+        text-align: center;
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 18px;
+    }
+
+    .login-fila {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .login-fila label {
+        width: 65px;
+        font-size: 13px;
+    }
+
+    .login-fila input {
+        width: 125px;
+        box-sizing: border-box;
+    }
+
+    .login-boton {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .login-boton button {
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 6px 10px;
+        cursor: pointer;
+    }
+
+    .login-error {
+        color: red;
+        text-align: center;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="login-container">
+
+    <h2>Autenticación</h2>
+
+    {% if error %}
+        <div class="login-error">
+            Usuario o contraseña incorrecta
+        </div>
+    {% endif %}
+
+    <form action="{{ path('app_login') }}" method="post">
+
+        <div class="login-fila">
+            <label for="username">Email:</label>
+            <input
+                type="text"
+                id="username"
+                name="_username"
+                value="{{ last_username }}"
+            >
+        </div>
+
+        <div class="login-fila">
+            <label for="password">Password:</label>
+            <input
+                type="password"
+                id="password"
+                name="_password"
+            >
+        </div>
+
+        <div class="login-boton">
+            <button type="submit">login</button>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

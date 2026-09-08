@@ -34,9 +34,33 @@
             font-weight: bold;
             margin: 10px 0;
         }
+        .producto-acciones {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-detalle {
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.producto-precio {
+    font-weight: bold;
+    color: black;
+    margin: 0;
+}       
     </style>
 
-    <h1 class="title" style="text-align: center; margin-top: 20px;">Lista de productos</h1>
+    <h1 class="title" style="text-align: center; margin-top: 20px;">
+    Carrito de compras - {{ app.user.email }}
+    </h1>
     <p style="text-align: center; color: #666;">Esta es la lista de productos disponibles</p>
 
     <!-- a. Estructura for de twig para iterar los productos -->
@@ -47,7 +71,10 @@
                 <img class="producto-img" src="{{ asset(producto.imagen) }}" alt="{{ producto.nombre }}">
                 <h3>{{ producto.nombre }}</h3>
                 <p>{{ producto.descripcion }}</p>
-                <div class="producto-precio">${{ producto.precio }}</div>
+                <div class="producto-acciones">
+    <button class="btn-detalle">Ver detalles</button>
+    <span class="producto-precio">Precio: ${{ producto.precio }}</span>
+</div>
             </div>
         {% else %}
             <p style="grid-column: 1/-1; text-align: center;">No hay productos cargados todavía.</p>
