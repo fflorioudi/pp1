@@ -15,8 +15,11 @@ class OrdenController extends AbstractController
         $idProducto = $request->request->get('idProducto');
         $cantidad = $request->request->get('cantidad');
 
-        return new Response(
-            "Se ingresó a la orden $cantidad unidades del producto $idProducto"
+        $this->addFlash(
+            'success',
+            "Se ingreso a la orden $cantidad unidades del producto $idProducto"
         );
+
+        return $this->redirectToRoute('listar_productos');
     }
 }

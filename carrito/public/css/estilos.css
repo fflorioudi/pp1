@@ -120,3 +120,12 @@ main {
     font-weight: bold;
     cursor: pointer;
 }
+
+.mensaje-flash {
+    background-color: #d9e9ff;
+    color: #2f5f9f;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    font-size: 13px;
+}
