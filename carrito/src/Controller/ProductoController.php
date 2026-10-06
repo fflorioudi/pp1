@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\ProductoRepository;
+use App\Manager\ProductoManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -10,14 +10,14 @@ use Symfony\Component\Routing\Attribute\Route;
 class ProductoController extends AbstractController
 {
     #[Route('/', name: 'listar_productos')]
-    public function listarProducto(ProductoRepository $productoRepository): Response
+    public function listarProducto(ProductoManager $productoManager): Response
     {
-        // b. Invocar al método findAll de la clase ProductoRepository
-        $productos = $productoRepository->findAll();
+        // Invocar al método getProductos de ProductoManager
+        $productos = $productoManager->getProductos();
 
-        // c. Pasar como parámetro todos los productos a la plantilla
+        // Pasar todos los productos a la plantilla
         return $this->render('producto/lista.html.twig', [
             'productos' => $productos,
-        ]);
+        ]); 
     }
 }
