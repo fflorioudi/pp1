@@ -12,12 +12,20 @@ class ProductoController extends AbstractController
     #[Route('/', name: 'listar_productos')]
     public function listarProducto(ProductoManager $productoManager): Response
     {
-        // Invocar al método getProductos de ProductoManager
         $productos = $productoManager->getProductos();
 
-        // Pasar todos los productos a la plantilla
         return $this->render('producto/lista.html.twig', [
             'productos' => $productos,
-        ]); 
+        ]);
+    }
+
+    #[Route('/producto/{id}', name: 'detalle_producto')]
+    public function detalleProducto(ProductoManager $productoManager, $id): Response
+    {
+        $producto = $productoManager->getProducto($id);
+
+        return $this->render('producto/detalle.html.twig', [
+            'producto' => $producto,
+        ]);
     }
 }

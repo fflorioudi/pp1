@@ -8,25 +8,13 @@
 
         <link
             rel="stylesheet"
-            href="{{ asset('css/estilos.css') }}"
+            href="{{ asset('css/estilos.css') }}?v=2"
         >
     </head>
 
     <body>
 
-        <header class="header">
-    <div>Carrito de Compras</div>
-
-    {% if app.user %}
-        <div>
-            <button class="btn-ligth">Ver Orden</button>
-
-            <a href="{{ path('app_logout') }}" class="btn-ligth" style="text-decoration: none;">
-                Salir
-            </a>
-        </div>
-    {% endif %}
-</header>
+        {% include 'header.html.twig' %}
 
         <main>
             {% block body %}{% endblock %}

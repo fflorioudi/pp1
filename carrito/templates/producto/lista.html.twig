@@ -72,7 +72,9 @@
                 <h3>{{ producto.nombre }}</h3>
                 <p>{{ producto.descripcion }}</p>
                 <div class="producto-acciones">
-    <button class="btn-detalle">Ver detalles</button>
+    <a href="{{ path('detalle_producto', {'id': producto.id}) }}" class="btn-detalle">
+    Ver detalles
+</a>    
     <span class="producto-precio">Precio: ${{ producto.precio }}</span>
 </div>
             </div>

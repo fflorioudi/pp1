@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Detalle del producto
+{% endblock %}
+
+{% block body %}
+
+<div class="detalle-wrapper">
+
+    <h2>Detalle del producto</h2>
+
+    <div class="detalle-producto">
+
+        <div class="detalle-imagen">
+            <img src="{{ asset(producto.imagen) }}" alt="{{ producto.nombre }}">
+        </div>
+
+        <div class="detalle-info">
+            <h3>{{ producto.nombre }}</h3>
+
+            <p>{{ producto.descripcion }}</p>
+
+            <p>
+                <strong>Precio:</strong> $ {{ producto.precio }}
+            </p>
+
+            <form action="{{ path('agregar_producto') }}" method="post">
+
+                <label for="cantidad">Cantidad</label>
+
+                <input
+                    type="text"
+                    id="cantidad"
+                    name="cantidad"
+                    value="1"
+                >
+
+                <input
+                    type="hidden"
+                    name="idProducto"
+                    value="{{ producto.id }}"
+                >
+
+                <div class="detalle-botones">
+                    <button type="submit">
+                        Agregar a la orden
+                    </button>
+
+                    <a href="{{ path('listar_productos') }}" class="btn-volver">
+                        Volver
+                    </a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

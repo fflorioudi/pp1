@@ -7,7 +7,6 @@ body {
     background-color: black;
     color: white;
     padding: 12px 20px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,4 +28,95 @@ body {
 
 main {
     padding: 20px;
+}
+
+.detalle-wrapper {
+    width: 620px;
+    margin: 20px auto;
+}
+
+.detalle-wrapper h2 {
+    font-size: 18px;
+    margin: 0 0 16px 0;
+}
+
+.detalle-producto {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 55px;
+}
+
+.detalle-imagen img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.detalle-info {
+    width: 220px;
+    font-size: 12px;
+    padding-top: 4px;
+}
+
+.detalle-info h3 {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+.detalle-info p {
+    margin: 6px 0;
+}
+
+.btn-volver {
+    display: inline-block;
+    margin-top: 3px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-detalle {
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 6px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.detalle-info label {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 3px;
+}
+
+.detalle-info input[type="text"] {
+    width: 85px;
+    padding: 3px;
+}
+
+.detalle-botones {
+    margin-top: 8px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.detalle-botones button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
 }

@@ -17,4 +17,9 @@ class ProductoManager
     {
         return $this->productoRepository->findAll();
     }
+
+    public function getProducto($id)
+    {
+        return $this->productoRepository->find($id);
+    }
 }
