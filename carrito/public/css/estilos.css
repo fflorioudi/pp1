@@ -7,6 +7,7 @@ body {
     background-color: black;
     color: white;
     padding: 12px 20px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,12 +19,26 @@ body {
 }
 
 .btn-ligth {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: white;
     color: black;
+
     border: none;
-    padding: 6px 12px;
     border-radius: 3px;
+
+    padding: 6px 12px;
+
+    font-size: 14px;
+    line-height: 1;
+
+    text-decoration: none !important;
+
     cursor: pointer;
+
+    white-space: nowrap;
 }
 
 main {
@@ -128,4 +143,39 @@ main {
     margin-bottom: 15px;
     border-radius: 2px;
     font-size: 13px;
+}
+.tabla-orden {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla-orden th,
+.tabla-orden td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-orden img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.resumen-orden {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.header-acciones {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.btn-ligth:hover,
+.btn-ligth:visited,
+.btn-ligth:active {
+    color: black;
+    text-decoration: none;
 }

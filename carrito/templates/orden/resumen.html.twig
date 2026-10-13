@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Ver orden
+{% endblock %}
+
+{% block body %}
+
+    <h2>Su orden</h2>
+
+    {% if orden %}
+
+        <table class="tabla-orden">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for item in orden.item %}
+                    <tr>
+                        <td>
+                            <img
+                                src="{{ asset(item.producto.imagen) }}"
+                                alt="{{ item.producto.nombre }}"
+                                width="50"
+                            >
+                        </td>
+
+                        <td>{{ item.producto.nombre }}</td>
+
+                        <td>{{ item.cantidad }}</td>
+
+                        <td>${{ item.producto.precio }}</td>
+
+                        <td>${{ item.total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="resumen-orden">
+            <strong>Total: ${{ orden.total }}</strong>
+        </div>
+
+    {% else %}
+
+        <p>No hay una orden iniciada.</p>
+
+    {% endif %}
+
+{% endblock %}

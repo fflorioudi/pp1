@@ -2,10 +2,12 @@
     <div>Carrito de Compras</div>
 
     {% if app.user %}
-        <div>
-            <button class="btn-ligth">Ver Orden</button>
+        <div class="header-acciones">
+            <a href="{{ path('ver_orden') }}" class="btn-ligth">
+                Ver Orden
+            </a>
 
-            <a href="{{ path('app_logout') }}" class="btn-ligth" style="text-decoration: none;">
+            <a href="{{ path('app_logout') }}" class="btn-ligth">
                 Salir
             </a>
         </div>

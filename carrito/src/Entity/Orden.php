@@ -88,14 +88,26 @@ class Orden
         return $this->item;
     }
 
-    public function addItem(Item $item): static
+    public function addItem(Producto $producto, int $cantidad): Item
     {
-        if (!$this->item->contains($item)) {
-            $this->item->add($item);
-            $item->setOrden($this);
+     $nuevoItem = new Item();
+
+     $nuevoItem->setProducto($producto);
+     $nuevoItem->setCantidad($cantidad);
+     $nuevoItem->setOrden($this);
+
+        foreach ($this->item as $itemExistente) {
+
+         if ($itemExistente->equals($nuevoItem)) {
+                $itemExistente->setCantidad($cantidad);
+
+                return $itemExistente;
+         }
         }
 
-        return $this;
+     $this->item->add($nuevoItem);
+
+        return $nuevoItem;
     }
 
     public function removeItem(Item $item): static
@@ -120,5 +132,16 @@ class Orden
         $this->usuario = $usuario;
 
         return $this;
+    }
+
+    public function getTotal(): float
+    {
+        $total = 0;
+
+        foreach ($this->item as $item) {
+         $total += $item->getTotal();
+        }
+
+        return $total;
     }
 }
